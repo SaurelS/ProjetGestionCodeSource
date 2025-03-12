@@ -1,6 +1,5 @@
 import unittest
-from utils import extraire_temps_ping
-from src.programme_principal import enregistrer_resultats
+from src.scanner_ip import enregistrer_resultats
 
 class TestAnalyseurReseau(unittest.TestCase):
     """Tests unitaires pour l'analyseur de réseau."""
