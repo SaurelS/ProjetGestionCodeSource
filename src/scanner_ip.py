@@ -5,7 +5,7 @@ import ipaddress
 import platform
 import subprocess
 from concurrent.futures import ThreadPoolExecutor
-from utils import extraire_temps_ping  # Importation de la fonction déplacée
+
 
 def tester_ip(adresse_ip: str) -> tuple[str, bool, float]:
     """
@@ -30,6 +30,26 @@ def tester_ip(adresse_ip: str) -> tuple[str, bool, float]:
         return adresse_ip, True, extraire_temps_ping(resultat.stdout)
     except subprocess.CalledProcessError:
         return adresse_ip, False, None
+        
+        
+ 
+def extraire_temps_ping(sortie: str) -> float:
+    """
+    Extrait le temps de réponse du ping à partir de la sortie de la commande.
+ 
+    Args:
+        sortie (str): La sortie de la commande ping.
+ 
+    Returns:
+        float: Le temps de réponse en millisecondes, ou None si non trouvé.
+    """
+    for ligne in sortie.split("\n"):
+        if "time=" in ligne:
+            try:
+                return float(ligne.split("time=")[1].split()[0].replace("ms", ""))
+            except ValueError:
+                return None
+    return None
 
 async def analyser_reseau(plage_ip: str, fichier_sortie: str):
     """
