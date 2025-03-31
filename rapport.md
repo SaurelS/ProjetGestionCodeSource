@@ -72,13 +72,13 @@ Je n’ai pas eu de difficultés sur cette partie car je ne l’ai tout simpleme
 
 1 - Points faibles du programme et solutions : 
 
-	- La fiabilité du ping, n effet certaines réponses peuvent être filtrées 	par des pare-feu, mais peut également varier selon le système 			d’exploitation. Solution : utiliser une bibliothèque qui 		permettrait d’envoyer des requêtes ICMP de manière plus fine afin d’éviter 		les restrictions.
-	- Les erreurs ne sont pas enregistrées, Solution : mettre place un système de logs pour mieux suivre les erreurs et le comportement du programme (Avec logging)
+- La fiabilité du ping, n effet certaines réponses peuvent être filtrées par des pare-feu, mais peut également varier selon le système d’exploitation. Solution : utiliser une bibliothèque qui permettrait d’envoyer des requêtes ICMP de manière plus fine afin d’éviter les restrictions.
+- Les erreurs ne sont pas enregistrées, Solution : mettre place un système de logs pour mieux suivre les erreurs et le comportement du programme (Avec logging)
 
 2 - Fonctionnalités ou optimisation avancées que j’aurai souhaité intégrer
 
-	Une interface graphique qui aurait permis de lancer le scan grâce à un 		simple clic au lieu de lancer le programme avec des lignes de commande. 	Avec Tkinter par exemple.
-	Et bien sûr l’optimisation des requêtes et logging pour la gestion des 		erreurs.
+Une interface graphique qui aurait permis de lancer le scan grâce à un 		simple clic au lieu de lancer le programme avec des lignes de commande. 	Avec Tkinter par exemple.
+Et bien sûr l’optimisation des requêtes et logging pour la gestion des erreurs.
 
 
 #Bilan personnel
