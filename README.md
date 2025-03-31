@@ -73,3 +73,31 @@ La branche principale est main, où se trouvent les versions stables du projet.
 Une branche feature/utils a été créée pour le développement de la fonctionnalité d'extraction du temps de réponse, puis fusionnée dans main.
 
 Chaque nouvelle fonctionnalité peut être développée dans une branche dédiée avant d'être fusionnée dans main.
+
+# Documentation avec sphinx
+
+La documentation a été générée avec Sphinx. Je me suis servi de plusieurs commandes telles que sphinx-quickstart, sphinx-apidoc -o, make html, make clean, etc. Toute la documentation est contenue dans le répertoire docs/. Voici la nouvelle arborescence après génération de la documentation : 
+
+ProjetGestionCodeSource/
+├── docs/
+│   ├── _build/
+│   ├── conf.py
+│   ├── index.rst
+│   ├── make.bat
+│   ├── Makefile
+│   ├── modules.rst
+│   ├── scanner_ip.rst
+│   ├── _static/
+│   └── _templates/
+├── rapport.md
+├── README.md
+├── src/
+│   ├── __pycache__/
+│   └── scanner_ip.py
+├── tests/
+│   ├── __pycache__/
+│   └── test_programme.py
+
+
+
+
