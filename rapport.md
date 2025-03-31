@@ -1,7 +1,7 @@
 #Rapport du projet
 
 
-#Introduction 
+# Introduction 
 
 1 - Objectif du projet
 L’objectif de mon projet est tout de se familiariser avec git et GitHub en utilisant les bonnes pratiques, de documenter le code de mon programme en utilisant des outils tels que les docstrings et sphinx, mais également documenter le suivi de mon projet.  Il faudra également appliquer des tests unitaires à mon programme et pour finir mettre en place une intégration continue avec GitHub Actions.
@@ -9,7 +9,7 @@ L’objectif de mon projet est tout de se familiariser avec git et GitHub en uti
 2 - Cible choisie
 Pour ce projet, j’ai choisi de réaliser l’option B : Suivi du réseau, le programme consistera à scanner des plages d’adresses IP et de voir quels adresses IP sont actives et inactives sur le réseau tout en les répertoriant dans un fichier .csv.
 
-#Solutions techniques
+# Solutions techniques
 
 1 - Outils et Bibliothèques utilisés
 
@@ -51,7 +51,7 @@ Et unittest qui va permettre au programme d’avoir plus de robustesse car unitt
 Grâce à la combinaison de ses outils et bibliothèques, le projet offre une solution performante, simple à utiliser et extensible pour l’analyse de réseau.
 
 
-#Difficultés rencontrées
+# Difficultés rencontrées
 
 Durant le projet j’ai rencontré beaucoup de problèmes que ce soit sur le programme, git, github et la documentation. En effet, j’ai réalisé ce projet sur le serveur de monsieur Roussille. 
 
@@ -68,7 +68,7 @@ Je n’ai pas eu tellement de difficulté au niveau du programme, cependant je n
 
 Je n’ai pas eu de difficultés sur cette partie car je ne l’ai tout simplement pas fait car je ne comprends rien.
 
-#Améliorations et optimisations
+# Améliorations et optimisations
 
 1 - Points faibles du programme et solutions : 
 
@@ -81,7 +81,7 @@ Une interface graphique qui aurait permis de lancer le scan grâce à un 		simpl
 Et bien sûr l’optimisation des requêtes et logging pour la gestion des erreurs.
 
 
-#Bilan personnel
+# Bilan personnel
 
 Durant ce projet, malgré les difficultés j’ai su développer de nombreuses compétences notamment sur Git et GitHub en adoptant les bonnes pratiques, mais également avec la documentation sphinx. Grâce à ce programme j’ai appris l’existence de nouvelles bibliothèques qui m’ont permis de faire fonctionner mon programme j’ai également amélioré mes compétences sur les tests unitaires. J’ai eu un bon sens de l’organisation tout le long du projet notamment avec les commit et les branches.
 
