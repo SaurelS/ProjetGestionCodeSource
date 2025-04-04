@@ -1,0 +1,37 @@
+name: Deploiment documentation
+ 
+on:
+  push:
+    branches:
+      - main 
+  pull_request:
+    branches:
+      - main 
+ 
+jobs:
+  deploy-docs:
+    runs-on: ubuntu-latest 
+ 
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3 
+ 
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11' 
+ 
+      - name: 📦 Install dependencies
+        run: |
+          pip install sphinx 
+ 
+      - name: 🧪 Build documentation
+        run: |
+          cd docs 
+          make html
+ 
+      - name: 📤 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3 
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Utilise le token GitHub pour l'authentification
+          publish_dir: ./docs/_build/html  # Dossier contenant les fichiers HTML générés par Sphinx
