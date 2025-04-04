@@ -74,30 +74,36 @@ Une branche feature/utils a été créée pour le développement de la fonctionn
 
 Chaque nouvelle fonctionnalité peut être développée dans une branche dédiée avant d'être fusionnée dans main.
 
+
+
 # Documentation avec sphinx
 
 La documentation a été générée avec Sphinx. Je me suis servi de plusieurs commandes telles que sphinx-quickstart, sphinx-apidoc -o, make html, make clean, etc. Toute la documentation est contenue dans le répertoire docs/. Voici la nouvelle arborescence après génération de la documentation : 
 
+
 ProjetGestionCodeSource/
-├── docs/
-│   ├── _build/
-│   ├── conf.py
-│   ├── index.rst
-│   ├── make.bat
-│   ├── Makefile
-│   ├── modules.rst
-│   ├── scanner_ip.rst
-│   ├── _static/
-│   └── _templates/
-├── rapport.md
-├── README.md
-├── src/
-│   ├── __pycache__/
-│   └── scanner_ip.py
-├── tests/
-│   ├── __pycache__/
-│   └── test_programme.py
+├── .github/                     # Contient la configuration des workflows GitHub Actions
+│   └── workflows/
+│       └── ci.yml                # Workflow GitHub Actions pour déployer la doc
+├── docs/                         # Dossier contenant la documentation Sphinx
+│   ├── _build/                   # Dossier généré par Sphinx (contient la doc HTML générée)
+│   ├── conf.py                   # Fichier de configuration Sphinx
+│   ├── index.rst                 # Fichier principal de la documentation
+│   ├── make.bat                  # Fichier pour générer la doc sous Windows
+│   ├── Makefile                  # Fichier pour générer la doc sous Unix
+│   ├── modules.rst               # Fichier pour décrire les modules
+│   ├── scanner_ip.rst            # Fichier spécifique pour la documentation de `scanner_ip.py`
+│   ├── _static/                  # Dossier pour les fichiers statiques (images, CSS, etc.)
+│   └── _templates/               # Dossier pour les templates de Sphinx
+├── rapport.md                    # Fichier de rapport au format Markdown
+├── README.md                     # Fichier README principal du projet
+├── src/                          # Code source Python
+│   ├── pycache/                  # Cache Python
+│   └── scanner_ip.py             # Script Python principal
+├── tests/                        # Tests du projet
+│   ├── pycache/                  # Cache Python pour les tests
+│   └── test_programme.py         # Tests unitaires pour ton programme
+├── .gitignore                    # Fichier pour ignorer les fichiers temporaires (ex : pycache, _build)
 
-
-
-
+# Workflow avec Github Actions
+Création du fichier ci.yml afin de déployer automaotiquement la documentation à chaque git push origin main. Cela permet d'automatiser la tâche de la documentation.

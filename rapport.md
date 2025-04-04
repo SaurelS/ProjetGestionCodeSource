@@ -66,7 +66,7 @@ Je n’ai pas eu tellement de difficulté au niveau du programme, cependant je n
 
 3 - Problèmes de configuration des workflows CI/CD
 
-Je n’ai pas eu de difficultés sur cette partie car je ne l’ai tout simplement pas fait car je ne comprends rien.
+Je n'ai pas très bien compris le système worklows CI/CD cependant,j'ai essayé de faire de mon mieux et de me pousser à faire cette partie qui est la moins réussi de mon projet.
 
 # Améliorations et optimisations
 
