@@ -11,10 +11,10 @@ def tester_ip(adresse_ip: str) -> tuple[str, bool, float]:
     """
     Envoie une requête ping à une adresse IP et retourne son statut
     et son temps de réponse.
-    
+
     Args:
         adresse_ip (str): L'adresse IP à tester.
-    
+
     Returns:
         tuple[str, bool, float]: Un tuple contenant l'adresse IP,
         son statut (True si active, False sinon), et le temps de réponse en ms.
@@ -30,16 +30,15 @@ def tester_ip(adresse_ip: str) -> tuple[str, bool, float]:
         return adresse_ip, True, extraire_temps_ping(resultat.stdout)
     except subprocess.CalledProcessError:
         return adresse_ip, False, None
-        
-        
- 
+
+
 def extraire_temps_ping(sortie: str) -> float:
     """
     Extrait le temps de réponse du ping à partir de la sortie de la commande.
- 
+
     Args:
         sortie (str): La sortie de la commande ping.
- 
+
     Returns:
         float: Le temps de réponse en millisecondes, ou None si non trouvé.
     """
@@ -51,25 +50,26 @@ def extraire_temps_ping(sortie: str) -> float:
                 return None
     return None
 
+
 async def analyser_reseau(plage_ip: str, fichier_sortie: str):
     """
     Analyse une plage d'adresses IP de manière asynchrone.
-    
+
     Args:
         plage_ip (str): La plage d'IP à analyser (format CIDR).
         fichier_sortie (str): Nom du fichier où enregistrer les résultats.
     """
     reseau = ipaddress.ip_network(plage_ip, strict=False)
     ips_actives = []
-    
-    with ThreadPoolExecutor(max_workers=10) as executant:  # Limitation du nombre de threads
+
+    with ThreadPoolExecutor(max_workers=10) as executant:
         loop = asyncio.get_event_loop()
         taches = [
             loop.run_in_executor(executant, tester_ip, str(ip))
             for ip in reseau.hosts()
         ]
         resultats = await asyncio.gather(*taches)
-    
+
     for ip, est_active, temps_reponse in resultats:
         statut = "Active" if est_active else "Inactive"
         ips_actives.append((ip, statut, temps_reponse))
@@ -77,12 +77,14 @@ async def analyser_reseau(plage_ip: str, fichier_sortie: str):
             f"{ip} {statut} (Ping: {temps_reponse} ms)"
             if est_active else f"{ip} {statut}"
         )
+
     enregistrer_resultats(fichier_sortie, ips_actives)
+
 
 def enregistrer_resultats(nom_fichier: str, resultats: list):
     """
     Enregistre les résultats de l'analyse dans un fichier CSV.
-    
+
     Args:
         nom_fichier (str): Le nom du fichier où enregistrer les résultats.
         resultats (list): Liste des résultats sous forme de tuples.
@@ -92,6 +94,7 @@ def enregistrer_resultats(nom_fichier: str, resultats: list):
         ecrivain.writerow(["IP", "Statut", "Ping (ms)"])
         ecrivain.writerows(resultats)
     print(f"Résultats enregistrés dans {nom_fichier}")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -107,3 +110,4 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     asyncio.run(analyser_reseau(args.plage, args.sortie))
+
