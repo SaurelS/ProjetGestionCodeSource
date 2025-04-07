@@ -34,11 +34,12 @@ cd ProjetGestionCodeSource
 
 # Scanner une plage d'adresses
 
-python src/scanner_ip.py --plage 192.168.1.0/24 --sortie resultats.csv
+python3 src/scanner_ip.py --plage 192.168.1.0/24 --sortie resultats.csv ou 
+python3 scanner_ip.py --plage 10.0.0.0/24 --sortie resultats.csv (le fichier resultats.csv sera créé dans le même répertoire que le programme).
 
 # Scanner une liste d'adresses IP à partir d'un fichier
 
-python src/scanner_ip.py --file ip_list.txt --sortie resultats.csv
+python3 src/scanner_ip.py --file ip_list.txt --sortie resultats.csv
 
 # Exemple de sortie
 
